@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>성분</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>성분 이름</th>
+      <th>성분 좋음 유무</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ingredients.each do |ingredient| %>
+      <tr>
+        <td><%= ingredient.ingredient_name %></td>
+        <td><%= ingredient.good_or_bad %></td>
+        <td><%= link_to 'Show', ingredient %></td>
+        <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
+        <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ingredient', new_ingredient_path %>

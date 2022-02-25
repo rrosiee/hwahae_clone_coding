@@ -1,0 +1,44 @@
+<%= form_with(model: hwahae_order, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.hidden_field :order_account, value:1 %>
+  </div>
+
+  <div class="field">
+    <%= form.date_select :order_date, { :discard_day => true, :discard_month => true, :discard_year => true }, value: Time.now%>
+  </div>
+
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+	<div class="btn-group" data-toggle="buttons">
+		<p style="margin-bottom:0;"></p>
+		<h3>
+			결제 수단 선택
+		</h3>
+		<label class="radio_button"> 카드 결제
+		   <%= form.radio_button :order_type, '카드 결제', checked: true %>
+		</label>
+		<label class="radio_button"> 현금 결제
+		   <%= form.radio_button :order_type, '현금 결제', checked: true %>
+		</label>
+		<label class="radio_button"> ARS 결제
+		   <%= form.radio_button :order_type, 'ARS 결제', checked: true %>
+		</label>
+	</div>
+
+  <div class="field">
+    <%= form.hidden_field :product_id%>
+  </div>
+<h1 class = 'ch'>
+  <% @products.each do |product| %>
+    총 <%=product.sale_price*@hwahae_order.order_account+product.delivery_price %> 원
+  <%end%>	
+</h1>
+
+  <div class="actions">
+    <%= form.submit "결제하기" %>
+  </div>
+<% end %>

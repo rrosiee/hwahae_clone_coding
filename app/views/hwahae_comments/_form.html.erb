@@ -1,0 +1,25 @@
+<%= form_with(model: hwahae_comment, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.date_select :order_date, { :discard_day => true, :discard_month => true, :discard_year => true }, value: Time.now%>
+  </div>
+  <div class="field">
+	<%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
+	<%= form.hidden_field :hwahae_content_id, value: @hwahae_content.id %>
+  </div>
+<table>
+	<tr>
+	  <td class="actions">
+		<%= form.submit '댓글달기', :class => 'btn'%> 
+	  </td>
+	  <td class="field">
+		<%= form.text_area :comment_text, :class =>'input' %>
+	  </td>
+
+	</tr>	
+</table>
+
+<% end %>

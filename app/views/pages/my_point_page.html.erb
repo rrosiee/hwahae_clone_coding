@@ -1,0 +1,8 @@
+<% @hwahae_orders.each do |hwahae_order| %>
+  <% @products.where(id: hwahae_order.product_id).each do |product| %>
+	<% @happy=@happy+product.point*hwahae_order.order_account %>
+  <% end %>
+<% end %>
+<h3>
+	누적 포인트: <%=@happy%>
+</h3> 

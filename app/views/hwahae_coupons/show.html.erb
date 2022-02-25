@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Valid type:</strong>
+  <%= @hwahae_coupon.valid_type %>
+</p>
+
+<p>
+  <strong>Sale persent:</strong>
+  <%= @hwahae_coupon.sale_persent %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hwahae_coupon.user %>
+</p>
+
+<%= link_to 'Edit', edit_hwahae_coupon_path(@hwahae_coupon) %> |
+<%= link_to 'Back', hwahae_coupons_path %>

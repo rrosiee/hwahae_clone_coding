@@ -1,0 +1,2 @@
+module HwahaeCouponsHelper
+end

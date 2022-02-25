@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class = 'nse'>신청한 이벤트</h1>
+
+<table class='type05'>
+  <thead>
+    <tr>
+      <th>브랜드명</th>
+      <th>이벤트 제목</th>
+      <th>이벤트 내용</th>
+	  <th>신청 취소</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_events.each do |event| %>
+      <tr>
+		<td><%= Event.find(event.event_id).brand_name %></td>
+        <td><%= Event.find(event.event_id).event_title %></td>
+        <td><%= Event.find(event.event_id).event_content %></td>
+		<td><%= link_to "신청취소", request_path(id: event.id), method: :delete %></td>  
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,102 @@
+<p id="notice"><%= notice %></p>
+
+
+	
+<p class ='img'>
+  <%= image_tag(@product.image, :size => "438x506") %>
+</p>
+
+<div class='showprd'>
+<p>
+  <strong>상품:</strong>
+  <%= @product.product_name %>
+</p>
+
+<p>
+  <strong>가격:</strong>
+  <%= @product.price %>원
+</p>
+
+<p>
+  <strong>할인가:</strong>
+  <%= @product.sale_price %>원
+</p>
+
+<p>
+  <strong>성분:</strong>
+  <%= @product.ingredient %>
+</p>
+
+<p>
+  <strong>상품 세부정보:</strong>
+  <%= @product.product_detail %>
+</p>
+
+<p>
+  <strong>포인트:</strong>
+  <%= @product.point %> P
+</p>
+
+<p>
+  <strong>배달비:</strong>
+  <%= @product.delivery_price %>원
+</p>
+
+<p>
+  <strong>카테고리:</strong>
+  <%= @product.category_name %>
+</p>
+
+<p>
+  <strong>브랜드명:</strong>
+  <%= @product.brand_name %>
+</p>
+</div>
+
+<div style="width:40px; height:250px; float:left; text-align:center;">
+	
+</div>
+
+
+<!--주문하기-->
+<div style="width:220px; height:250px; float:left; text-align:center;">
+	<%= render 'hwahae_orders/form', hwahae_order: @hwahae_order%>
+	<%= render 'hwahae_carts/form', hwahae_cart: @hwahae_cart%>
+</div>
+<!--찜하기-->
+
+<div style="width:200px; height:250px; float:left; text-align:center;">
+	
+</div>
+
+
+<div class='riv'>
+	
+<!--리뷰달기-->
+<h4>리뷰 <%= @product_reviews.size %> 개</h4>
+
+</div>
+
+<div class='rivw'>
+<ul>
+	<% @product_reviews.each do |product_review| %>
+	  <li>
+		  <h3>
+			<% @users.where(id: product_review.user_id).each do |u| %>
+				  <%= u.nickname %>:
+				<%end%>
+			<%= product_review.review_comment %>			  
+		  </h3>
+	  </li>
+	<% end %>
+</ul>
+</div>
+
+<div style="width:220px; height:250px; float:left; text-align:center;">
+	<%= render 'product_reviews/form', product_review: @product_review %>
+</div>
+
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

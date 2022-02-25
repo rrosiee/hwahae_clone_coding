@@ -1,0 +1,43 @@
+<div class = 'info2'>
+	<p>
+		<img class = 'bang' src="bbang1.jpg">
+	</p>
+
+	<div class = 'userinfo'>
+		<%@users.where(id: current_user.id).each do |u|%>
+		  <%=u.nickname%> 
+		  <h5>
+				<%=u.worries_about_skin %> |
+				<%=u.skin_type%> |
+				<%=u.sex%>
+				<%end%>
+		  </h5>
+				<% @hwahae_orders.each do |hwahae_order| %>
+			  	<% @products.where(id: hwahae_order.product_id).each do |product| %>
+				<% @happy=@happy+product.point.to_i*hwahae_order.order_account.to_i %>
+			  	<% end %>
+				<% end %>
+			<h5>
+				누적 포인트: <%=@happy%>
+			</h5>
+	</div>		
+</div>
+
+
+
+<!-- <% @hwahae_orders.each do |hwahae_order| %>
+  <% @products.where(id: hwahae_order.product_id).each do |product| %>
+	<% @happy=@happy+product.point.to_i*hwahae_order.order_account.to_i %>
+  <% end %>
+<% end %>
+<h3>
+	누적 포인트: <%=@happy%>
+</h3> -->
+
+<div class = 'casort'>
+<p class = 'casort1'><%= link_to '쿠폰함', hwahae_coupons_path, class: "btn btn-info" %></p>
+<p class = 'casort2'><%= link_to '이벤트 신청 내역', requests_path, class: "btn btn-info" %></p>
+<p class = 'casort3'><%= link_to '찜한 상품', cart_path, class: "btn btn-info" %></p>
+<p class = 'casort4'><%= link_to '주문 내역', hwahae_orders_path, class: "btn btn-info" %></p>
+<p class = 'casort5'><%= link_to '내 리뷰', product_reviews_path, class: "btn btn-info" %></p>
+</div>

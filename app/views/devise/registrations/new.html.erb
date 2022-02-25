@@ -1,0 +1,98 @@
+<div class = 'res'>
+
+<h2 class = 'rg'>회원가입</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field11">
+    <!-- <%= f.label :email %><br /> -->
+    Email : <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field22">
+    <!-- <%= f.label :password %> -->
+    <% if @minimum_password_length %>
+    <em class = 'pwl'>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    Password : <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field33">
+    <!-- <%= f.label :password_confirmation %><br /> -->
+    PW Confirm : <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+	<div class="form-group44">
+		이름 : <%= f.text_field :user_name, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group55">
+		닉네임 : <%= f.text_field :nickname, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group66">
+		
+	휴대폰번호 :	<%= f.text_field :phone_number, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group77">
+		
+		배송지 : <%= f.text_field :address, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group88">
+		
+		연령 : <%= f.number_field :age, autofocus: true, class: 'form-control' %>
+	</div>
+	
+	<div class="form-group99">
+		피부타입 : 
+		<%= f.text_field :skin_type, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group101">
+		피부고민 :
+		<%= f.text_field :worries_about_skin, autofocus: true, class: 'form-control' %>
+	</div>
+
+
+	<div class="btn-group1" data-toggle="buttons">
+		<p style="margin-bottom:0;"></p>
+		성별
+		<label class="radio_button"> 남자
+		   <%= f.radio_button :sex, '남자', checked: true %>
+		</label>
+		<label class="radio_button active"> 여자 
+		   <%= f.radio_button :sex, '여자', checked: true %>
+		</label>
+	</div>
+
+	<div class="btn-group2" data-toggle="buttons">
+		<p style="margin-bottom:0;"></p>
+		자녀유무 
+		<label class="radio_button"> 있음
+		   <%= f.radio_button :children_or_not, '남자', checked: true %>
+		</label>
+		<label class="radio_button active"> 없음
+		   <%= f.radio_button :children_or_not, '여자', checked: true %>
+		</label>
+	</div>
+
+	<!-- <div class="form-group99">
+		피부타입 : 
+		<%= f.text_field :skin_type, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group101">
+		피부고민 :
+		<%= f.text_field :worries_about_skin, autofocus: true, class: 'form-control' %>
+	</div> -->
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "devise/shared/links" %>

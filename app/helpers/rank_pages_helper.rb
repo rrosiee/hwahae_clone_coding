@@ -1,0 +1,2 @@
+module RankPagesHelper
+end

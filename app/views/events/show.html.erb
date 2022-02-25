@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div class = 'consort'>
+	<h1>
+	  <%=@event.brand_name %>
+	</h1>
+	<h3 align="right">
+	  <i><%= @event.event_title %> 에디터 작성</i>
+	</h3>
+	<hr/>
+	<p class = 'happy'>
+	  <%= @event.event_content %>
+	</p>
+</div>
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

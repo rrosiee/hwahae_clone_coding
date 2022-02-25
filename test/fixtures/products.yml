@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_name: MyString
+  price: 1
+  sale_price: 1
+  ingredient: MyString
+  product_detail: MyText
+  point: 1
+  delivery_price: 1
+  category_name: MyString
+  brand_name: MyString
+  category_rank: 1
+
+two:
+  product_name: MyString
+  price: 1
+  sale_price: 1
+  ingredient: MyString
+  product_detail: MyText
+  point: 1
+  delivery_price: 1
+  category_name: MyString
+  brand_name: MyString
+  category_rank: 1

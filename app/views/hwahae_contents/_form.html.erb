@@ -1,0 +1,33 @@
+<%= form_with(model: hwahae_content, local: true) do |form| %>
+  <% if hwahae_content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hwahae_content.errors.count, "error") %> prohibited this hwahae_content from being saved:</h2>
+
+      <ul>
+      <% hwahae_content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class = 'con33'>
+  <div class="field0">
+    <%= form.label :content_title %>
+    <%= form.text_field :content_title %>
+  </div>
+
+  <div class="field00">
+    <%= form.label :content_content %>
+    <%= form.text_area :content_content %>
+  </div>
+
+  <div class="field000">
+    <%= form.label :editor_name %>
+    <%= form.text_field :editor_name %>
+  </div>
+</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

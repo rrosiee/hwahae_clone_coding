@@ -1,0 +1,99 @@
+<h2 class = 'ed'>  회원정보 수정 </h2>
+<!-- <%= resource_name.to_s.humanize %> -->
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="mi">
+    <!-- <%= f.label :email %><br /> -->
+    E-mail : <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="np">
+    <!-- <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br /> -->
+    Password : <%= f.password_field :password, autocomplete: "new-password" %>
+    <!-- <% if @minimum_password_length %>
+      <br />
+      <em class= 'minl'><%= @minimum_password_length %> characters minimum</em>
+    <% end %> -->
+  </div>
+
+  <div class="pc">
+    <!-- <%= f.label :password_confirmation %><br /> -->
+    PW Confirm : <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="cp">
+    <!-- <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br /> -->
+    Current PW : <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+<div class="form-group44">
+		이름 : <%= f.text_field :user_name, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group55">
+		닉네임 : <%= f.text_field :nickname, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group66">
+		
+	휴대폰번호 :	<%= f.text_field :phone_number, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group77">
+		
+		배송지 : <%= f.text_field :address, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group88">
+		
+		연령 : <%= f.number_field :age, autofocus: true, class: 'form-control' %>
+	</div>
+	
+	<div class="form-group99">
+		피부타입 : 
+		<%= f.text_field :skin_type, autofocus: true, class: 'form-control' %>
+	</div>
+
+	<div class="form-group101">
+		피부고민 :
+		<%= f.text_field :worries_about_skin, autofocus: true, class: 'form-control' %>
+	</div>
+
+
+	<div class="btn-group1" data-toggle="buttons">
+		<p style="margin-bottom:0;"></p>
+		성별
+		<label class="radio_button"> 남자
+		   <%= f.radio_button :sex, '남자', checked: true %>
+		</label>
+		<label class="radio_button active"> 여자 
+		   <%= f.radio_button :sex, '여자', checked: true %>
+		</label>
+	</div>
+
+	<div class="btn-group2" data-toggle="buttons">
+		<p style="margin-bottom:0;"></p>
+		자녀유무 
+		<label class="radio_button"> 있음
+		   <%= f.radio_button :children_or_not, '남자', checked: true %>
+		</label>
+		<label class="radio_button active"> 없음
+		   <%= f.radio_button :children_or_not, '여자', checked: true %>
+		</label>
+	</div>
+
+  <div class="actions">
+    <%= f.submit "Update" %>
+  </div>
+<% end %>
+
+<!-- <h4 class = 'cma'>회원 탈퇴</h4> -->
+
+<p class = 'unh'> <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+
+<%= link_to "Back", :back %>

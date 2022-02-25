@@ -1,0 +1,2 @@
+class RankPage < ApplicationRecord
+end

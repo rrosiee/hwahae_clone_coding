@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+<div class='showprd'>
+	<% @products.each do |product| %>
+	  <div class ='img'><%= image_tag(product.image, :size => "300x350") %></div>
+	<% end %>
+</div>
+
+<div>
+	<ul class='ord2'>
+		<% @products.each do |product| %>
+		  <li>상품: <%= product.product_name %></li>
+		  <li>상품 세부정보: <%= product.product_detail%></li>
+		  <li>상품 가격: <%= product.price %>원</li>
+		  <li>상품 할인 가격: <%= product.sale_price %>원</li>
+		  <li>배송비: <%= product.delivery_price %>원</li>
+		  <li>포인트: <%= product.point %> 포인트 적립</li>
+		<%end%>
+	</ul> 
+</div>
+
+<div>
+	<% @products.each do |product| %>
+	  판매가 <%= product.sale_price*@hwahae_order.order_account %>원 + 배달비 <%= product.delivery_price %>원 =  <%=product.sale_price*@hwahae_order.order_account+product.delivery_price %> 원
+	<%end%>
+</div>
+
+<h2>배송정보</h2>
+<% @users.each do |user| %>
+  <p>성함: <%= user.user_name %></p>
+  <p>연락처: <%= user.phone_number %></p>
+  <p>배송지: <%= user.address %></p>	
+<% end %>
+<hr/>
+
+<p><%= render 'formd', hwahae_order: @hwahae_order %></p>
+
+	
+	
+	

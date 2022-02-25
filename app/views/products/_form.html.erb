@@ -1,0 +1,77 @@
+<%= form_with(model: product, local: true) do |form| %>
+  <% if product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, value: @product.id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_id %>
+    <%= form.text_field :product_id, value: @product.id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_name %>
+    <%= form.text_field :product_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sale_price %>
+    <%= form.number_field :sale_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ingredient %>
+    <%= form.text_field :ingredient %>
+  </div>
+
+  <div class="field">
+    <%= form.label :product_detail %>
+    <%= form.text_area :product_detail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :point %>
+    <%= form.number_field :point %>
+  </div>
+
+  <div class="field">
+    <%= form.label :delivery_price %>
+    <%= form.number_field :delivery_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_name %>
+    <%= form.text_field :category_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand_name %>
+    <%= form.text_field :brand_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_rank %>
+    <%= form.number_field :category_rank %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

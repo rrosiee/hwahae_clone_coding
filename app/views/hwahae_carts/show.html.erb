@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Product count:</strong>
+  <%= @hwahae_cart.product_count %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hwahae_cart.user %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @hwahae_cart.product %>
+</p>
+
+<%= link_to 'Edit', edit_hwahae_cart_path(@hwahae_cart) %> |
+<%= link_to 'Back', hwahae_carts_path %>

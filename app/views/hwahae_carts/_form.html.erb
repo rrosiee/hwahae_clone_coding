@@ -1,0 +1,18 @@
+<%= form_with(model: hwahae_cart, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.hidden_field :product_count, value:1%>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :product_id, value: @product.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "찜하기" %>
+  </div>
+<% end %>

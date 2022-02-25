@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>랭킹</h1>
+
+<table>
+  <thead>
+    <tr>
+	  <td>상품명</td>
+	  <td>정가</td>
+	  <td>할인가</td>
+	  <td>성분</td>
+	  <td>상품 설명</td>
+	  <td>포인트</td>
+	  <td>배송비</td>
+	  <td>카테고리명</td>
+	  <td>브랜드명</td>
+	  <td>순위</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.product_name %></td>
+		<td><%= product.price %></td>
+		<td><%= product.sale_price %></td>
+		<td><%= product.ingredient %></td>
+		<td><%= product.product_detail %></td>
+		<td><%= product.point %></td>
+		<td><%= product.delivery_price %></td>
+	    <td><%= product.category_name %></td>
+     	<td><%= product.brand_name %></td>
+		<td><%= product.category_rank %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

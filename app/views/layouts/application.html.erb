@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hwahae Homepage</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	  <div class = 'ht2'>
+		  <% if user_signed_in? %>
+			<%= link_to "회원정보", edit_user_registration_path%>
+		  	<%= link_to "로그아웃", destroy_user_session_path, method: :delete %>
+		  	<%=current_user.email%>님
+		  <% else%>
+		    <%= link_to "로그인", user_session_path %>
+		    <%=link_to "회원가입", "/users/sign_up"%>
+		  <%end%>
+	  </div>
+	  <div class = 'wrap'>
+	  	<img class = 'img2' src = '/log80.png'>
+	  	<input class = 'iput' >
+	<!-- <img class = 'img3' src = 'bell.png'> -->
+	  </div>
+	  
+	  <div class = 'ht'> 
+			  <%=link_to '홈', home_page_path%> 
+			  <%=link_to '컨텐츠', hwahae_contents_path%> 
+			  <%=link_to '이벤트', events_path%> 
+			  <%=link_to '랭킹', rank_pages_path%> 
+			  <%=link_to '화해쇼핑', products_path%> 
+		  	  <%=link_to 'MY', my_page_path%> 
+	  </div>
+	  <!-- <hr/> -->
+    <%= yield %>
+  </body>
+	  
+</html>

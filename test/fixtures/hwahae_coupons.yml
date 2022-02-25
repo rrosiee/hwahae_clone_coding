@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  valid_type: 2021-12-03
+  sale_persent: 1
+  user: one
+
+two:
+  valid_type: 2021-12-03
+  sale_persent: 1
+  user: two

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class = 'prd'>상품</h1>
+
+<table class='type05'>
+  <thead>
+    <tr>
+      <th>카테고리</th>
+	  <th>브랜드명</th>
+      <th>상품명</th>
+      <th>상품 세부정보</th>
+      <th>배달비</th>
+	  <th>가격</th>
+      <th>할인가</th>
+      <th>포인트</th>
+	  <th>상품 보기</th>
+	  <th>상품 편집</th>
+	  <th>상품 삭제</th>	
+    </tr>
+  </thead>
+
+  <tbody>
+	  <tr>
+    <% @products.each do |product| %>
+        <td><%= product.category_name %></td>
+        <td><%= product.brand_name %></td>
+        <td><%= product.product_name %></td>
+        <td><%= product.product_detail %></td>
+        <td><%= product.delivery_price %></td>
+        <td><%= product.price %></td>
+        <td><%= product.sale_price %></td>
+        <td><%= product.point %></td>
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p class='ne'><%= link_to 'New Product', new_product_path %></p>
+

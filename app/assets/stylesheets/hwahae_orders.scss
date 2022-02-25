@@ -1,0 +1,76 @@
+// Place all the styles related to the hwahae_orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.ord {
+	margin-top:100px;
+	font-weight:bold;
+	font-size:40px;
+}
+
+.ord2 {
+	margin-top: 75px;
+	margin-right:200px;
+	list-style:none;
+	font-size:18px;
+}
+
+.ord3 {
+	list-style:none;
+}
+
+.ord4 {
+	margin-left:1200px;
+}
+
+.ord5 {
+	margin-left:1200px;
+}
+.jumun {
+	margin-top:120px;
+	margin-bottom: 80px;
+	text-align: center;
+	font-size : 40px;
+}
+.bt{
+	margin-left:1200px;
+	font-size:15px;
+
+}
+.img{
+	margin-left:20px;
+}
+
+.jb-container {
+	width: 940px;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #bcbcbc;
+	}
+
+.jb-header {
+	padding: 20px;
+	margin-bottom: 20px;
+	border: 1px solid #bcbcbc;
+	}
+
+.jb-content {
+	width: 580px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: left;
+	border: 1px solid #bcbcbc;
+	}
+
+.jb-sidebar {
+	width: 260px;
+	padding: 20px;
+	margin-bottom: 20px;
+	float: right;
+	border: 1px solid #bcbcbc;
+	}
+
+.jb-footer {
+	clear: both;
+	padding: 20px;
+	border: 1px solid #bcbcbc;
+	}

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @hwahae_comment.date %>
+</p>
+
+<p>
+  <strong>Comment text:</strong>
+  <%= @hwahae_comment.comment_text %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hwahae_comment.user %>
+</p>
+
+<p>
+  <strong>Hwahae content:</strong>
+  <%= @hwahae_comment.hwahae_content %>
+</p>
+
+<%= link_to 'Edit', edit_hwahae_comment_path(@hwahae_comment) %> |
+<%= link_to 'Back', hwahae_comments_path %>

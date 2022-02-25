@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class = 'ggim'>찜하기</h1>
+
+<table class='type05'>
+  <thead>
+    <tr>
+      <th>상품명</th>
+      <th>가격</th>
+      <th>할인가</th>
+      <th>성분</th>
+      <th>상품 세부정보</th>
+      <th>포인트</th>
+      <th>배달비</th>
+      <th>카테고리</th>
+      <th>브랜드명</th>
+	  <th>삭제하기</th>	
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cart_products.each do |product| %>
+      <tr>
+        <td><%= Product.find(product.product_id).product_name %></td>
+        <td><%= Product.find(product.product_id).price %></td>
+        <td><%= Product.find(product.product_id).sale_price %></td>
+        <td><%= Product.find(product.product_id).ingredient %></td>
+        <td><%= Product.find(product.product_id).product_detail %></td>
+        <td><%= Product.find(product.product_id).point %></td>
+        <td><%= Product.find(product.product_id).delivery_price %></td>
+        <td><%= Product.find(product.product_id).category_name %></td>
+        <td><%= Product.find(product.product_id).brand_name %></td>
+        <td><%= link_to '삭제하기', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

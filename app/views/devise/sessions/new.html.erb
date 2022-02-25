@@ -1,0 +1,29 @@
+<h2 class = 'lg0'>로그인</h2>
+
+<div class = 'logc'>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field1">
+    <!-- <%= f.label :email %><br /> -->
+	E-mail : <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field2">
+    
+    Password : <%= f.password_field :password, autocomplete: "current-password" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field3">
+       <%= f.check_box :remember_me %> Remember me
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit "Log in" %>
+  </div>
+<% end %>
+	
+</div>
+
+<%= render "devise/shared/links" %>

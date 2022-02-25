@@ -1,0 +1,47 @@
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.evt {
+	margin-top : 120px;
+	margin-bottom : 80px;
+	margin-left : 10px;
+	font-size: 40px;
+	text-align : center;
+}
+
+
+table.type05 {
+  border-collapse: separate;
+  border-spacing: 1px;
+  text-align: center;
+  line-height: 1.5;
+  border-top: 1px solid #ccc;
+  margin-left: auto;
+  margin-right: auto;	
+}
+table.type05 th {
+  width: 150px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+  background: #B6D3D8;
+  opacity:0.6; /* 20% 투명도 */	
+}
+table.type05 td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+  border-bottom: 1px solid #ccc;
+}
+.nse {
+	margin-top:120px;
+	margin-bottom: 80px;
+	text-align: center;
+	font-size : 40px;
+}
+
+.ne {
+	text-align: center;
+}

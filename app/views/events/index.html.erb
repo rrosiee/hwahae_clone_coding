@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+	
+<h1 class="evt">이벤트</h1>
+
+<table class='type05' >
+	<thead>
+    <tr class = 'cons2'>
+	  <th scope="row">브랜드명</th>
+      <th scope="row">이벤트 제목</th>
+      <th scope="row">이벤트 내용</th>
+	  <th scope="row">이벤트 보기</th>	
+	  <th scope="row">신청하기</th>
+    </tr>
+	</thead>
+  
+	<tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.brand_name %></td>
+        <td><%= event.event_title %></td>
+        <td><%= event.event_content %></td>
+		<td><%= link_to '이벤트 보기', event %></td>  
+		<td><%= button_to "신청하기", requests_path(request: { user_id: current_user.id, event_id: event.id } ) %></td>
+      </tr>
+    <% end %>
+	</tbody>
+</table>
+
+<p class='ne'><%= link_to 'New Event', new_event_path %></p>

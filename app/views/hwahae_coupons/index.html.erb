@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class = 'cuu'>쿠폰</h1>
+
+<table class='type05'>
+  <thead>
+    <tr>
+	  <th>쿠폰이름</th>
+      <th>유효기간</th>	
+	  <th>보기</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_coupons.each do |hwahae_coupon| %>
+      <tr>
+		<td><%= hwahae_coupon.couponname %></td>
+        <td><%= hwahae_coupon.valid_type %></td>
+        <td><%= link_to 'Show', hwahae_coupon %></td>
+        <!-- <td><%= link_to 'Edit', edit_hwahae_coupon_path(hwahae_coupon) %></td> -->
+        <!-- <td><%= link_to 'Destroy', hwahae_coupon, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hwahae Coupon', new_hwahae_coupon_path %>

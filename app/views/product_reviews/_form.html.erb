@@ -1,0 +1,18 @@
+<%= form_with(model: product_review, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.text_area :review_comment%>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :product_id, value: @product.id %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "리뷰쓰기" %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <strong>Order account:</strong>
+  <%= @hwahae_order.order_account %>
+</p>
+
+<p>
+  <strong>Order date:</strong>
+  <%= @hwahae_order.order_date %>
+</p>
+
+<p>
+  <strong>Order type:</strong>
+  <%= @hwahae_order.order_type %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hwahae_order.user %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @hwahae_order.product %>
+</p>
+
+<%= link_to 'Edit', edit_hwahae_order_path(@hwahae_order) %> |
+<%= link_to 'Back', hwahae_orders_path %>

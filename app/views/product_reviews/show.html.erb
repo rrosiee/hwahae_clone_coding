@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>리뷰 작성:</strong>
+  <%= @product_review.review_comment %>
+</p>
+
+<p>
+  <strong>상품명:</strong>
+  <%= @product_review.product %>
+</p>
+
+<p>
+  <strong>사용자:</strong>
+  <%= @product_review.user %>
+</p>
+
+<%= link_to 'Edit', edit_product_review_path(@product_review) %> |
+<%= link_to 'Back', product_reviews_path %>

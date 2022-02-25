@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<div class = 'consort'>
+	<h1>
+	  <%=@hwahae_content.content_title %>
+	</h1>
+	<h3 align="right">
+	  <i><%= @hwahae_content.editor_name %> 에디터 작성</i>
+	</h3>
+	<hr/>
+	<p class = 'happy'>
+	  <%= @hwahae_content.content_content %>
+	</p>
+</div>
+
+<h2>댓글 <%= @hwahae_comments.size %> 개</h2>
+<ul >
+	<% @hwahae_comments.each do |hwahae_comment| %>
+		<li class='happy2'><% @users.where(id: hwahae_comment.user_id).each do |u| %>
+      		  <%= u.nickname %>:
+			<%end%>
+			<%= hwahae_comment.comment_text%>
+			<%= hwahae_comment.date%>
+			<%= link_to '댓글삭제', hwahae_comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+		</li>
+	<% end %>
+</ul>
+<%= render 'hwahae_comments/form', hwahae_comment: @hwahae_comment %>
+
+<%= link_to 'Edit', edit_hwahae_content_path(@hwahae_content) %> |
+<%= link_to 'Back', hwahae_contents_path %>

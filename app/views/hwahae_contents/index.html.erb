@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class = 'cons'>컨텐츠</h1>
+
+<table class='type05'>
+  <thead>
+    <tr class = 'cons2'>
+      <th scope="row">컨텐츠 제목</th>
+      <th scope="row">에디터</th>
+	  <th scope="row">컨텐츠 보기</th>
+	  <th scope="row">컨텐츠 수정하기</th>
+	  <th scope="row">컨텐츠 삭제하기</th>		
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hwahae_contents.each do |hwahae_content| %>
+      <tr>
+        <td><%= hwahae_content.content_title %></td>
+        <td><%= hwahae_content.editor_name %></td>
+        <td><%= link_to 'Show', hwahae_content %></td>
+        <td><%= link_to 'Edit', edit_hwahae_content_path(hwahae_content) %></td>
+        <td><%= link_to 'Destroy', hwahae_content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<p class='ne'><%= link_to 'New Hwahae Content', new_hwahae_content_path %></p>

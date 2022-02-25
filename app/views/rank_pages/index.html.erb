@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class = 'rank00'>랭킹</h1>
+
+<table class='type05'>
+  <thead>
+    <tr class = 'cons2'>
+		<th>순위</th>
+		<th>상품명</th>
+		<th>상품 보기</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.sort_by{|e| e[:category_rank]}.each do |product| %>
+      <tr class = 'ranksort'>
+		<td><%= product.category_rank %></td>
+        <td><%= product.product_name %></td>
+		<td><%= link_to '상품 보기', product_path(product.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

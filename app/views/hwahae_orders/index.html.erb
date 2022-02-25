@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class = 'jumun'>주문 내역</h1>
+
+<table class='type05'>
+  <thead>
+    <tr>
+      <th>주문 일자</th>
+      <th>결제 방법</th>
+      <th>상품명</th>
+      <th>주문 수량</th>
+      <th>적립된 포인트</th>
+	  <th>상세 주문</th>    
+	  <th>주문 취소</th>    	
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hwahae_orders.each do |hwahae_order| %>
+      <tr>
+        <td><%= hwahae_order.order_date %></td>
+        <td><%= hwahae_order.order_type %></td>
+      <% @products.where(id: hwahae_order.product_id).each do |p| %>
+          <td><%= p.product_name %></td>
+      <% end %> 
+        <td><%= hwahae_order.order_account %></td>  
+      <% @products.where(id: hwahae_order.product_id).each do |product| %>
+        <td><%= product.point.to_i * hwahae_order.order_account.to_i %></td>
+      <% end %>  
+        <td><%= link_to '상세 주문', hwahae_order %></td>
+        <td><%= link_to '주문 취소', hwahae_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+     

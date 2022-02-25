@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Hwahae Carts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product count</th>
+      <th>User</th>
+      <th>Product</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hwahae_carts.each do |hwahae_cart| %>
+      <tr>
+        <td><%= hwahae_cart.product_count %></td>
+        <td><%= hwahae_cart.user %></td>
+        <td><%= hwahae_cart.product %></td>
+        <td><%= link_to 'Show', hwahae_cart %></td>
+        <td><%= link_to 'Edit', edit_hwahae_cart_path(hwahae_cart) %></td>
+        <td><%= link_to 'Destroy', hwahae_cart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hwahae Cart', new_hwahae_cart_path %>
